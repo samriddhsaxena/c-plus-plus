@@ -10,6 +10,23 @@ void palindrome(string str){
     if(str==rev) cout<<"It is a palindrome.";
     else cout<<"Not a palindrome.";
 }
+void revStr(string str){
+    string rev = str;
+    reverse(rev.begin(),rev.end());
+    cout<<rev;
+}
+
+int numOfVowels(){
+    string str;
+    cin>>str;
+    int count = 0;
+    for(int i=0;i<str.length();i++){
+        if(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u'){
+            count++;
+        }
+    }
+    return count;
+}
 
 int main(){
     // Given an array of numbers, find the maximum value
@@ -56,6 +73,55 @@ int main(){
     }
     else if(count>=2){
         cout<<++count;
+    }
+
+    // Create a function to reverse a given string
+    revStr("Samriddh");
+
+    // Write a Python program to check if a given string is a pangram (contains all letters of the alphabet)
+    string s;
+    cin>>s;
+    int count = 0;
+    for(int i=0;i<s.length();i++){
+        if(int(s[i])>=97 && int(s[i])<=122){
+            count++;
+        }
+        else if(s[i]=' '){
+            count++;
+        }
+    }
+    if(count>=26){
+        cout<<"Yes it is pangram.";
+    }
+    else{
+        cout<<"Not a pangram.";
+    }
+
+    // Create a function to count the number of vowels in a given string
+
+    cout<<numOfVowels();
+
+    // Write a program to check if a number is prime.
+
+    int n;
+    cin>>n;
+    if(n==1){
+        cout<<"Neither prime nor composite"<<endl;
+    } 
+    else{
+        bool isPrime = true;
+        for (int i = 2; i < n; ++i) {
+            if (n % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime) {
+            cout << "It is a prime number." << endl;
+        } else {
+            cout << "Not a prime number" << endl;
+        }
     }
 
     return 0;
