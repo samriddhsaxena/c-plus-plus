@@ -123,6 +123,23 @@ int main(){
             cout << "Not a prime number" << endl;
         }
     }
+    // Calculate the sum of digits of a given number.
+
+    int n,rem,num;
+    int sum = 0;
+    cin>>num;
+    cin>>n;
+    if(n<10){
+        cout<<n;
+    }
+    else{
+    for(int i=0;i<num;i++){
+        rem = n%10;
+        sum += rem;
+        n/=10;
+    }
+    cout<<sum;
+    }
 
     return 0;
 }
